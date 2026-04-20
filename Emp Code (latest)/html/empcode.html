@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile Dashboard</title>
+    <link rel="stylesheet" href="../css/empcode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+
+        <section class="search-and-actions">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search employee">
+                <div class="search-dropdown-toggle" id="searchDropdownToggle">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="search-filter-menu" id="searchFilterMenu">
+                    <div class="filter-option active" data-col="all">All</div>
+                    <div class="filter-option" data-col="firstName">First Name</div>
+                    <div class="filter-option" data-col="lastName">Last Name</div>
+                    <div class="filter-option" data-col="employeeId">Employee ID</div>
+                    <div class="filter-option" data-col="fbCode">FB Post Sharing Code</div>
+                    <div class="filter-option" data-col="status">Status</div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <div class="export-dropdown">
+                    <button class="btn btn-secondary export-toggle"><i class="fa-solid fa-download"></i> Export</button>
+                    <div class="export-menu">
+                        <button class="export-option" data-format="csv"><i class="fa-solid fa-file-csv"></i> CSV</button>
+                        <button class="export-option" data-format="pdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                        <button class="export-option" data-format="excel"><i class="fa-solid fa-file-excel"></i> Excel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="card employee-list-card">
+            <div class="table-responsive">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="firstName" class="sortable">FIRST NAME <i class="sort-icon fas fa-sort"></i></th>
+                            <th data-sort="lastName" class="sortable">LAST NAME <i class="sort-icon fas fa-sort"></i></th>
+                            <th data-sort="employeeId" class="sortable">EMPLOYEE ID <i class="sort-icon fas fa-sort"></i></th>
+                            <th data-sort="fbCode" class="sortable">FB POST SHARING CODE <i class="sort-icon fas fa-sort"></i></th>
+                            <th data-sort="status" class="sortable">STATUS <i class="sort-icon fas fa-sort"></i></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <tr>
+                            <td>Romyl</td>
+                            <td>Magwata</td>
+                            <td>UPSE001</td>
+                            <td>UPSE-FB-2024001</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sheniah</td>
+                            <td>Bucoy</td>
+                            <td>UPSE002</td>
+                            <td>UPSE-FB-2024002</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Adham</td>
+                            <td>Michael</td>
+                            <td>UPSE003</td>
+                            <td>UPSE-FB-2024003</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Davie</td>
+                            <td>Regulacion</td>
+                            <td>UPSE004</td>
+                            <td>UPSE-FB-2024004</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sherwin</td>
+                            <td>Gelg</td>
+                            <td>UPSE005</td>
+                            <td>UPSE-FB-2024005</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Angelo</td>
+                            <td>Depamaylo</td>
+                            <td>UPSE006</td>
+                            <td>UPSE-FB-2024006</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Al-Khazri</td>
+                            <td>Alim</td>
+                            <td>UPSE007</td>
+                            <td>UPSE-FB-2024007</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Shamir</td>
+                            <td>Rasul</td>
+                            <td>UPSE008</td>
+                            <td>UPSE-FB-2024008</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Jecelle</td>
+                            <td>Fajardo</td>
+                            <td>UPSE009</td>
+                            <td>UPSE-FB-2024009</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Bennedic</td>
+                            <td>Oratorio</td>
+                            <td>UPSE010</td>
+                            <td>UPSE-FB-2024010</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Joyce</td>
+                            <td>Bianca</td>
+                            <td>UPSE011</td>
+                            <td>UPSE-FB-2024011</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Steven</td>
+                            <td>Antonio</td>
+                            <td>UPSE012</td>
+                            <td>UPSE-FB-2024012</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Ana</td>
+                            <td>Reyes</td>
+                            <td>UPSE013</td>
+                            <td>UPSE-FB-2024013</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td class="action-icon"><i class="fa-regular fa-copy" title="Copy"></i></td>
+                            <td class="action-icon"><i class="fa-solid fa-rotate-right" title="Refresh"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <span class="records-count" id="recordsCount">Showing 1-13 records</span>
+                <div class="pagination" id="pagination">
+                    <button class="page-btn" id="prevPage"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" id="nextPage"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Load jsPDF and XLSX for export (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="../js/empcode-enhanced.js"></script>
+</body>
+</html>
